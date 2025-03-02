@@ -1,7 +1,6 @@
 """ Starting point of program """
 # Dependencies
-# import matplotlib
-# matplotlib.use('TkAgg')
+
 
 # Internal Modules
 from source.framework.library.a_integrator import LOG
@@ -14,13 +13,13 @@ from source.controller.processor import Processor
 
 def main()-> None:
     """Starting point of program"""
-    print("hello World")
     LOG.info(message="started")
 
     activity = Statements()
     r_transactions = activity.transactions
     t_processor = Processor(raw_transactions=r_transactions)
     transactions = t_processor.processed_transactions
+    #transactions.to_csv("transactions.csv")
     transactions['year_month'] = transactions['transaction_date'].dt.to_period('M')
 
     report = Report(statement=transactions)
@@ -41,8 +40,6 @@ def main()-> None:
                              values='amount', aggfunc='sum', margins=True,
                              margins_name='Total')
     LOG.table(table=a, header=a.columns)
-
-
 
     LOG.info(message="Ended")
 
