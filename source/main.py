@@ -29,6 +29,8 @@ def main()-> None:
 
     for month, group in month_groups:
 
+        LOG.critical(message=month)
+
         report = Report(statement=group)
 
         earnings = report.earnings()
