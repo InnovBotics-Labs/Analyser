@@ -39,3 +39,25 @@ class Report:
             column_name='amount',
             condition=lambda x: x < 0
         )
+
+    # Reports under Expenses
+    def expenses_category(self)-> pd.DataFrame:
+        """Generates the categorized report"""
+
+        # Modify and takes statements only the expenses
+        expenses = self.expenses()
+
+        return expenses.pivot_table(index="category", columns="year_month",
+                             values='amount', aggfunc='sum', margins=True,
+                             margins_name='Total')
+
+    # Reports under Expenses
+    def expenses_sub_category(self)-> pd.DataFrame:
+        """Generates the categorized report"""
+
+        # Modify and takes statements only the expenses
+        expenses = self.expenses()
+
+        return expenses.pivot_table(index="sub_category", columns="year_month",
+                             values='amount', aggfunc='sum', margins=True,
+                             margins_name='Total')

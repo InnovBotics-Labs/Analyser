@@ -28,9 +28,9 @@ class OriginalStatement:
         """
         self.dir_path = \
             CONFIG.get(section="statement_settings",option="location")
-        self.__from_all_credit_cards: dict = \
+        self.__from_credit_cards: dict = \
             self.__load_statements(account_category = "credit_cards")
-        self.__from_all_checking_accounts:dict = \
+        self.__from_checking_accounts:dict = \
             self.__load_statements(account_category = "checking_accounts")
 
     def __load_statements(self,account_category: str)-> dict:
@@ -62,11 +62,11 @@ class OriginalStatement:
         return statements
 
     @property
-    def from_all_checking_accounts(self)-> dict:
+    def from_checking_accounts(self)-> dict:
         """returns the checking account statements """
-        return self.__from_all_checking_accounts
+        return self.__from_checking_accounts
 
     @property
-    def from_all_credit_cards(self) -> dict:
+    def from_credit_cards(self) -> dict:
         """returns the checking account statements """
-        return self.__from_all_credit_cards
+        return self.__from_credit_cards
