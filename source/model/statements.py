@@ -44,8 +44,8 @@ class Statements:
 
         # Combine all statements (merging 2 dict)
         statements = \
-            self.__original_statements.from_all_credit_cards\
-            | self.__original_statements.from_all_checking_accounts
+            self.__original_statements.from_credit_cards\
+            | self.__original_statements.from_checking_accounts
 
         # Traverse each statement one by one
         for account, statement in statements.items():
