@@ -39,7 +39,6 @@ def main()-> None:
         expenses = report.expenses()
         LOG.table(table=expenses, header=expenses.columns)
 
-
         expenses_category = report.expenses_category()
         LOG.table(table=expenses_category,header=expenses_category.columns)
 
