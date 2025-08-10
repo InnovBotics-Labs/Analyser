@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 import resources_rc
+import icons
+from dashoard import Ui_MainWindow
 
 
 class Ui_Widget(object):
@@ -70,14 +72,14 @@ class Ui_Widget(object):
 "")
         self.horizontalLayout = QtWidgets.QHBoxLayout(Widget)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.label_4 = QtWidgets.QLabel(parent=Widget)
-        self.label_4.setMaximumSize(QtCore.QSize(550, 600))
-        self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap(":/DALL_E_2025-03-04_17.28.19_-_A_modern_budget_analyzer_concept_with_financial_charts__graphs__and_a_calculator_on_a_digital_screen._The_image_features_a_professional_workspace_with-removebg-preview.png"))
-        self.label_4.setScaledContents(True)
-        self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.horizontalLayout.addWidget(self.label_4)
+        self.central_image = QtWidgets.QLabel(parent=Widget)
+        self.central_image.setMaximumSize(QtCore.QSize(550, 600))
+        self.central_image.setText("")
+        self.central_image.setPixmap(QtGui.QPixmap(":/images/resources/bugdet_laptop_no_bg.png"))
+        self.central_image.setScaledContents(True)
+        self.central_image.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.central_image.setObjectName("central_image")
+        self.horizontalLayout.addWidget(self.central_image)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.label_2 = QtWidgets.QLabel(parent=Widget)
@@ -85,27 +87,28 @@ class Ui_Widget(object):
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
-        self.label = QtWidgets.QLabel(parent=Widget)
-        self.label.setMaximumSize(QtCore.QSize(350, 350))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/DALL_E_2025-03-04_10.59.37_-_A_detailed__realistic_gold_coin_with_intricate_engravings__embossed_edges__and_a_shiny_reflective_surface._The_coin_features_a_classic_design_with_a_f-removebg-preview.png"))
-        self.label.setScaledContents(True)
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
+        self.dollar_coin = QtWidgets.QLabel(parent=Widget)
+        self.dollar_coin.setMaximumSize(QtCore.QSize(350, 350))
+        self.dollar_coin.setText("")
+        self.dollar_coin.setPixmap(QtGui.QPixmap(":/images/resources/dollar_coin.png"))
+        self.dollar_coin.setScaledContents(True)
+        self.dollar_coin.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.dollar_coin.setObjectName("dollar_coin")
+        self.verticalLayout.addWidget(self.dollar_coin)
         self.label_3 = QtWidgets.QLabel(parent=Widget)
         self.label_3.setMaximumSize(QtCore.QSize(350, 16777215))
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
-        self.lineEdit = QtWidgets.QLineEdit(parent=Widget)
-        self.lineEdit.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.lineEdit.setObjectName("lineEdit")
-        self.verticalLayout.addWidget(self.lineEdit)
-        self.pushButton = QtWidgets.QPushButton(parent=Widget)
-        self.pushButton.setMaximumSize(QtCore.QSize(350, 16777215))
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout.addWidget(self.pushButton)
+        self.entered_password = QtWidgets.QLineEdit(parent=Widget)
+        self.entered_password.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.entered_password.setObjectName("entered_password")
+        self.verticalLayout.addWidget(self.entered_password)
+        self.login_buttons = QtWidgets.QPushButton(parent=Widget)
+        self.login_buttons.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.login_buttons.setObjectName("login_buttons")
+        self.verticalLayout.addWidget(self.login_buttons)
+        self.login_buttons.clicked.connect(self.check_password)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         self.verticalLayout.setStretch(0, 1)
@@ -117,12 +120,25 @@ class Ui_Widget(object):
         self.retranslateUi(Widget)
         QtCore.QMetaObject.connectSlotsByName(Widget)
 
+    def check_password(self):
+        if self.entered_password.text() == "password":  # Replace with actual password logic
+            self.open_dashboard()
+        else:
+            QtWidgets.QMessageBox.warning(None, "Login Failed", "Incorrect Password")
+
+    def open_dashboard(self):
+        self.dashboard = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.dashboard)
+        self.dashboard.show()
+
+
     def retranslateUi(self, Widget):
         _translate = QtCore.QCoreApplication.translate
         Widget.setWindowTitle(_translate("Widget", "Form"))
         self.label_2.setText(_translate("Widget", "Budget Analyser"))
         self.label_3.setText(_translate("Widget", "Enter the Password"))
-        self.pushButton.setText(_translate("Widget", "Login"))
+        self.login_buttons.setText(_translate("Widget", "Login"))
 
 
 if __name__ == "__main__":

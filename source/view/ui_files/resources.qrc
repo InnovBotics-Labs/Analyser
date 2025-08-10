@@ -1,6 +1,6 @@
 <RCC>
-  <qresource>
-    <file>DALL_E_2025-03-04_17.28.19_-_A_modern_budget_analyzer_concept_with_financial_charts__graphs__and_a_calculator_on_a_digital_screen._The_image_features_a_professional_workspace_with-removebg-preview.png</file>
-    <file>DALL_E_2025-03-04_10.59.37_-_A_detailed__realistic_gold_coin_with_intricate_engravings__embossed_edges__and_a_shiny_reflective_surface._The_coin_features_a_classic_design_with_a_f-removebg-preview.png</file>
+  <qresource prefix="images">
+    <file>resources/bugdet_laptop_no_bg.png</file>
+    <file>resources/dollar_coin.png</file>
   </qresource>
 </RCC>

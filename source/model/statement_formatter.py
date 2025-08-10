@@ -4,15 +4,16 @@ Blue+print of:formatting and organizing the data into desired structure
 """
 # Dependencies
 import pandas as pd
+from abc import ABC, abstractmethod
 
 # Internal Dependencies
 from source.framework.library.a_integrator import LOG, TABLE_HEADER
 from source.framework.library.config_manager import CONFIG
 from source.framework.library.pandas_toolkit import PandasToolkit
 
-class StatementFormatter:
+class BaseStatementFormatter(ABC):
     """
-    Purpose: formatting and organizing the data into desired structure
+    Purpose: Base class for formatting and organizing statement data into desired structure
     Attributes:
         statement : pd.DataFrame
         account_name: str
@@ -34,10 +35,10 @@ class StatementFormatter:
         2. Unifies the column name across statement
         3. Adds from account columns
         4. Keeps only the required columns
-        5. Certain bank statements have inverted signs for the expenses
+        5. Bank-specific formatting (implemented by child classes)
         6. Changing the date column to date time format
 
-        :return:
+        :return: Formatted DataFrame
         """
 
         # Unifies the amount column be combining debit and credit
@@ -52,21 +53,20 @@ class StatementFormatter:
         # keeps only the required columns
         self._required_columns()
 
-        # Certain banks statements have inverted signs for the expenses
-        if self.account_name in ['citi','discover']:
-
-            # Converts expenditure to negative value and payout to positive value
-            self.statement = PandasToolkit.modify_column(
-                df=self.statement,
-                column_name='amount',
-                condition=lambda x: True,
-                operation=lambda x: x * -1
-            )
+        # Bank-specific formatting (implemented by child classes)
+        self._bank_specific_formatting()
 
         # Changes the date column to date time format
         self.statement['transaction_date'] = pd.to_datetime(self.statement['transaction_date'])
 
         return self.statement
+    
+    @abstractmethod
+    def _bank_specific_formatting(self) -> None:
+        """
+        Bank-specific formatting logic to be implemented by child classes
+        """
+        pass
 
     def _format_amount_column(self) -> None:
         """ To perform: will rename columns in the data table"""
@@ -114,3 +114,76 @@ class StatementFormatter:
     def get_account_name(self)-> str:
         """returns the account name"""
         return self.account_name
+
+
+class CitiStatementFormatter(BaseStatementFormatter):
+    """
+    Purpose: Formatter for Citi bank statements
+    """
+    
+    def _bank_specific_formatting(self) -> None:
+        """
+        Citi bank specific formatting:
+        - Converts expenditure to negative value and payout to positive value
+        """
+        # Converts expenditure to negative value and payout to positive value
+        self.statement = PandasToolkit.modify_column(
+            df=self.statement,
+            column_name='amount',
+            condition=lambda x: True,
+            operation=lambda x: x * -1
+        )
+        LOG.debug("Applied Citi-specific formatting")
+
+
+class DiscoverStatementFormatter(BaseStatementFormatter):
+    """
+    Purpose: Formatter for Discover bank statements
+    """
+    
+    def _bank_specific_formatting(self) -> None:
+        """
+        Discover bank specific formatting:
+        - Converts expenditure to negative value and payout to positive value
+        """
+        # Converts expenditure to negative value and payout to positive value
+        self.statement = PandasToolkit.modify_column(
+            df=self.statement,
+            column_name='amount',
+            condition=lambda x: True,
+            operation=lambda x: x * -1
+        )
+        LOG.debug("Applied Discover-specific formatting")
+
+
+class DefaultStatementFormatter(BaseStatementFormatter):
+    """
+    Purpose: Default formatter for bank statements that don't need special formatting
+    """
+    
+    def _bank_specific_formatting(self) -> None:
+        """
+        Default implementation - no special formatting needed
+        """
+        LOG.debug("No bank-specific formatting needed for this statement")
+
+
+# Factory function to create the appropriate formatter based on account name
+def create_statement_formatter(**kwargs):
+    """
+    Factory function to create the appropriate statement formatter based on account name
+    
+    Args:
+        **kwargs: Keyword arguments including account_name and statement
+        
+    Returns:
+        An instance of the appropriate statement formatter class
+    """
+    account_name = kwargs.get("account_name")
+    
+    if account_name == 'citi':
+        return CitiStatementFormatter(**kwargs)
+    elif account_name == 'discover':
+        return DiscoverStatementFormatter(**kwargs)
+    else:
+        return DefaultStatementFormatter(**kwargs)

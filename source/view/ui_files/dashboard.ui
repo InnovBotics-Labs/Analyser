@@ -206,7 +206,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../icon/icons.qrc">:/icons/coins.png</pixmap>
+          <pixmap resource="resources/icons.qrc">:/icons/coins.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -222,7 +222,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/home.png</normaloff>:/icons/home.png</iconset>
          </property>
          <property name="iconSize">
@@ -245,7 +245,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/earnings.png</normaloff>:/icons/earnings.png</iconset>
          </property>
          <property name="iconSize">
@@ -268,7 +268,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/expenses.png</normaloff>:/icons/expenses.png</iconset>
          </property>
          <property name="iconSize">
@@ -291,7 +291,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/upload.png</normaloff>:/icons/upload.png</iconset>
          </property>
          <property name="iconSize">
@@ -314,7 +314,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/mapper.png</normaloff>:/icons/mapper.png</iconset>
          </property>
          <property name="iconSize">
@@ -350,7 +350,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
          </property>
          <property name="iconSize">
@@ -373,7 +373,7 @@ QTreeView::branch:selected {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/logout.png</normaloff>:/icons/logout.png</iconset>
          </property>
          <property name="iconSize">
@@ -449,7 +449,7 @@ QTreeView::branch:selected {
           <string>Home</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/home.png</normaloff>:/icons/home.png</iconset>
          </property>
          <property name="checkable">
@@ -466,7 +466,7 @@ QTreeView::branch:selected {
           <string>Earnings</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/earnings.png</normaloff>:/icons/earnings.png</iconset>
          </property>
          <property name="checkable">
@@ -483,7 +483,7 @@ QTreeView::branch:selected {
           <string>Expenses</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/expenses.png</normaloff>:/icons/expenses.png</iconset>
          </property>
          <property name="checkable">
@@ -500,7 +500,7 @@ QTreeView::branch:selected {
           <string>Upload</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/upload.png</normaloff>:/icons/upload.png</iconset>
          </property>
          <property name="checkable">
@@ -517,7 +517,7 @@ QTreeView::branch:selected {
           <string>Mapper</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/mapper.png</normaloff>:/icons/mapper.png</iconset>
          </property>
          <property name="checkable">
@@ -547,7 +547,7 @@ QTreeView::branch:selected {
           <string>Settings</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
          </property>
          <property name="checkable">
@@ -564,7 +564,7 @@ QTreeView::branch:selected {
           <string>Logout</string>
          </property>
          <property name="icon">
-          <iconset resource="../icon/icons.qrc">
+          <iconset resource="resources/icons.qrc">
            <normaloff>:/icons/logout.png</normaloff>:/icons/logout.png</iconset>
          </property>
          <property name="checkable">
@@ -632,7 +632,7 @@ QTreeView::branch:selected {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../icon/icons.qrc">
+             <iconset resource="resources/icons.qrc">
               <normaloff>:/icons/nav.png</normaloff>:/icons/nav.png</iconset>
             </property>
             <property name="iconSize">
@@ -681,7 +681,7 @@ QTreeView::branch:selected {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../icon/icons.qrc">
+             <iconset resource="resources/icons.qrc">
               <normaloff>:/icons/reload.png</normaloff>:/icons/reload.png</iconset>
             </property>
             <property name="iconSize">
@@ -726,7 +726,7 @@ QTreeView::branch:selected {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../icon/icons.qrc">
+             <iconset resource="resources/icons.qrc">
               <normaloff>:/icons/power-off.png</normaloff>:/icons/power-off.png</iconset>
             </property>
             <property name="iconSize">
@@ -743,7 +743,7 @@ QTreeView::branch:selected {
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -817,7 +817,7 @@ QTreeView::branch:selected {
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../icon/icons.qrc"/>
+  <include location="resources/icons.qrc"/>
  </resources>
  <connections>
   <connection>

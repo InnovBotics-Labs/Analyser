@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+import icons
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -411,7 +411,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         self.change_button.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.change_button.toggled['bool'].connect(self.full_name_widget.setHidden) # type: ignore
         self.home_button_1.toggled['bool'].connect(self.home_button_2.setChecked) # type: ignore

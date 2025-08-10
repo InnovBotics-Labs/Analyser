@@ -76,7 +76,7 @@ QPushButton:pressed {
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="central_image">
      <property name="maximumSize">
       <size>
        <width>550</width>
@@ -87,7 +87,7 @@ QPushButton:pressed {
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="resources/resources.qrc">:/DALL_E_2025-03-04_17.28.19_-_A_modern_budget_analyzer_concept_with_financial_charts__graphs__and_a_calculator_on_a_digital_screen._The_image_features_a_professional_workspace_with-removebg-preview.png</pixmap>
+      <pixmap resource="resources.qrc">:/images/resources/bugdet_laptop_no_bg.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -116,7 +116,7 @@ QPushButton:pressed {
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="dollar_coin">
        <property name="maximumSize">
         <size>
          <width>350</width>
@@ -127,7 +127,7 @@ QPushButton:pressed {
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources/resources.qrc">:/DALL_E_2025-03-04_10.59.37_-_A_detailed__realistic_gold_coin_with_intricate_engravings__embossed_edges__and_a_shiny_reflective_surface._The_coin_features_a_classic_design_with_a_f-removebg-preview.png</pixmap>
+        <pixmap resource="resources.qrc">:/images/resources/dollar_coin.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -154,7 +154,7 @@ QPushButton:pressed {
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="entered_password">
        <property name="maximumSize">
         <size>
          <width>350</width>
@@ -164,7 +164,7 @@ QPushButton:pressed {
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="login_buttons">
        <property name="maximumSize">
         <size>
          <width>350</width>
@@ -194,7 +194,7 @@ QPushButton:pressed {
   </layout>
  </widget>
  <resources>
-  <include location="resources/resources.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>

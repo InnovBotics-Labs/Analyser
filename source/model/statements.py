@@ -9,7 +9,7 @@ import pandas as pd
 from source.framework.library.a_integrator import LOG, TABLE_HEADER
 from source.framework.library.pandas_toolkit import PandasToolkit
 from source.model.original_statement import OriginalStatement
-from source.model.statement_formatter import StatementFormatter
+from source.model.statement_formatter import create_statement_formatter
 
 class Statements:
     """
@@ -50,10 +50,10 @@ class Statements:
         # Traverse each statement one by one
         for account, statement in statements.items():
 
-            # Creates a statement formater
-            statement_formatter = StatementFormatter(account_name=account, statement=statement)
+            # Creates the appropriate statement formatter based on account name
+            statement_formatter = create_statement_formatter(account_name=account, statement=statement)
 
-            # Formated statement from statement formatter
+            # Formatted statement from statement formatter
             formatted_statement = statement_formatter.get_desired_format()
 
             LOG.info("statements are formatted to the desired format.")

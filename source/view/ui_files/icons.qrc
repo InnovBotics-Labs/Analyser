@@ -1,15 +1,15 @@
 <RCC>
   <qresource prefix="icons">
-    <file>coins.png</file>
-    <file>power-off.png</file>
-    <file>reload.png</file>
-    <file>upload.png</file>
-    <file>mapper.png</file>
-    <file>nav.png</file>
-    <file>home.png</file>
-    <file>earnings.png</file>
-    <file>expenses.png</file>
-    <file>settings.png</file>
-    <file>logout.png</file>
+    <file>resources/coins.png</file>
+    <file>resources/power-off.png</file>
+    <file>resources/reload.png</file>
+    <file>resources/upload.png</file>
+    <file>resources/mapper.png</file>
+    <file>resources/nav.png</file>
+    <file>resources/home.png</file>
+    <file>resources/earnings.png</file>
+    <file>resources/expenses.png</file>
+    <file>resources/settings.png</file>
+    <file>resources/logout.png</file>
   </qresource>
 </RCC>
