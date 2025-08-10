@@ -8,6 +8,7 @@ import pandas as pd
 # Internal Dependencies
 from source.framework.library.pandas_toolkit import PandasToolkit
 
+
 class Report:
     """
     Purpose: Blueprint of To create a report based on the data
@@ -41,23 +42,23 @@ class Report:
         )
 
     # Reports under Expenses
-    def expenses_category(self)-> pd.DataFrame:
+    def expenses_category(self) -> pd.DataFrame:
         """Generates the categorized report"""
 
         # Modify and takes statements only the expenses
         expenses = self.expenses()
 
         return expenses.pivot_table(index="category", columns="year_month",
-                             values='amount', aggfunc='sum', margins=True,
-                             margins_name='Total')
+                                    values='amount', aggfunc='sum', margins=True,
+                                    margins_name='Total')
 
     # Reports under Expenses
-    def expenses_sub_category(self)-> pd.DataFrame:
+    def expenses_sub_category(self) -> pd.DataFrame:
         """Generates the categorized report"""
 
         # Modify and takes statements only the expenses
         expenses = self.expenses()
 
         return expenses.pivot_table(index="sub_category", columns="year_month",
-                             values='amount', aggfunc='sum', margins=True,
-                             margins_name='Total')
+                                    values='amount', aggfunc='sum', margins=True,
+                                    margins_name='Total')
